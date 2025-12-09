@@ -1,0 +1,565 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const starWarsImages = [
+  "https://res.cloudinary.com/dnjizpad3/image/upload/v1764745731/Screenshot_2025-12-02_at_10.52.37_PM_sbqtv4.png",
+  "https://res.cloudinary.com/dnjizpad3/image/upload/v1764745731/Screenshot_2025-12-02_at_10.52.58_PM_lcrgbl.png",
+  "https://res.cloudinary.com/dnjizpad3/image/upload/v1764745731/Screenshot_2025-12-02_at_10.52.11_PM_fs2w3w.png",
+  "https://res.cloudinary.com/dnjizpad3/image/upload/v1764745746/Screenshot_2025-12-02_at_10.51.56_PM_wmocef.png",
+  "https://res.cloudinary.com/dnjizpad3/image/upload/v1764745730/Screenshot_2025-12-02_at_10.51.33_PM_not8el.png",
+  "https://res.cloudinary.com/dnjizpad3/image/upload/v1764745730/Screenshot_2025-12-02_at_10.51.44_PM_llubad.png"
+];
+
+const projects = [
+  {
+    title: "Star Wars: 5G Sith Trooper",
+    desc: "Real-time MoCap + broadcast AR at the Rise of Skywalker premiere. Blending physical sets with Unreal Engine.",
+    tags: ["Unreal Engine", "MoCap", "5G"]
+  },
+  {
+    title: "Demeter (Meta Quest)",
+    desc: "One of the largest games ever made directly for mixed reality.",
+    tags: ["Mixed Reality", "Game Design"]
+  },
+  {
+    title: "Earth by Lil Dicky",
+    desc: "Bronze Lion-winning website. 1M+ impressions within a day of launch.",
+    tags: ["Web", "Creative Direction"]
+  },
+  {
+    title: "Mandela Robben Island",
+    desc: "Bronze Telly. Immersive documentary experience with the Mandela family.",
+    tags: ["VR", "Documentary"]
+  },
+  {
+    title: "Asteria AI Studio",
+    desc: "Built AI animation pipelines for multi-series, multi-year streaming projects.",
+    tags: ["AI Animation", "Pipeline"]
+  },
+  {
+    title: "Drax Daren",
+    desc: "AI-generated Star Wars photography. Humans of New York in space.",
+    tags: ["Stable Diffusion", "World-building"]
+  }
+];
+
+const timeline = [
+  {
+    date: "Film School",
+    title: "BFA in Directing & Screenwriting",
+    desc: "Dodge College of Film and Media Arts. Story and character first."
+  },
+  {
+    date: "RYOT / Meta",
+    title: "Senior Creative Producer",
+    desc: "Led teams of 100+. Emmy-winning VR/AR. 3 hackathon wins. Filed a patent. Star Wars 5G Sith Trooper at the Rise of Skywalker premiere."
+  },
+  {
+    date: "Virtual Prod",
+    title: "Realtime Animation & Unreal Engine",
+    desc: "Motion capture, Ncam, world-building. The tech disappears — what stays is the magic."
+  },
+  {
+    date: "AI Studios",
+    title: "Built Asteria & Late Night Labs",
+    desc: "AI animation studios from zero to production. Multi-series pipelines for streaming-scale delivery."
+  }
+];
+
+const values = [
+  { title: "Fail faster.", desc: "Get to creative decisions quicker. More time to explore, more time for mastery on the moments that matter." },
+  { title: "Reduce miscommunication.", desc: "So much friction comes from not understanding what someone's asking. AI bridges that gap." },
+  { title: "Put the money on screen.", desc: "Stop sacrificing shots for budget. Save the resources for what audiences actually feel." },
+  { title: "Say yes to what usually dies.", desc: "Projects get killed for time and money. AI gives you a chance to breathe life back into them." }
+];
+---
+
+<Layout title="Eric Day — AI Creative Supervisor">
+  <button id="theme-toggle" class="theme-toggle">
+    <span class="light-label">☀ Day</span>
+    <span class="dark-label">☽ Night</span>
+  </button>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="hero-label">Eric Day</span>
+    <h1 class="hero-title">Filmmaker first. Technologist by necessity.</h1>
+    <p class="hero-subtitle">AI Creative Supervisor · Los Angeles</p>
+    <div class="hero-creds">
+      <span class="cred">Emmy Award Winner</span>
+      <span class="cred">ex-Meta & RYOT</span>
+      <span class="cred">Dodge College BFA</span>
+    </div>
+  </section>
+
+  <!-- ORIGIN -->
+  <section class="section slide-up" id="origin-section">
+    <span class="section-label">How I Got Here</span>
+    <h2 class="section-headline">
+      I got into AI the same way I get into everything — by making something.
+    </h2>
+    <p class="section-body">
+      I wanted to see if I could create photorealistic Star Wars images. Not for a client. Not for a pitch. Just because I'm a fan who wanted to see if the technology was real.
+    </p>
+    <p class="section-body">
+      It turned into a project: Drax Daren, a traveling space photographer documenting daily life across the Star Wars universe. Humans of New York — but in space.
+    </p>
+    <p class="section-body muted">
+      That's the pattern. I follow what unlocks new ways of telling stories — VR, virtual production, real-time animation, now AI — and then I figure out how to actually build with it.
+    </p>
+    <div class="gallery-strip" id="gallery-strip">
+      <div class="gallery-inner" id="gallery-inner">
+        {starWarsImages.map((src, i) => (
+          <img src={src} alt={`Star Wars AI photo ${i + 1}`} loading="lazy" data-index={i} class="gallery-thumb" />
+        ))}
+        <span class="gallery-hint">@draxdaren</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section class="section slide-up">
+    <span class="section-label">The Journey</span>
+    <h2 class="section-headline">
+      Creative producer turned creative technologist. I learned the tech because the craft demanded it.
+    </h2>
+    <div class="timeline">
+      {timeline.map((item) => (
+        <div class="timeline-item">
+          <span class="timeline-date">{item.date}</span>
+          <div>
+            <p class="timeline-title">{item.title}</p>
+            <p class="timeline-desc">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- WHAT I BELIEVE -->
+  <section class="section slide-up">
+    <span class="section-label">What I Believe</span>
+    <h2 class="section-headline">
+      It's not about the technology. It's about the magic it creates for the people watching.
+    </h2>
+    <p class="section-body">
+      The goal is to make everything seamless. The tech should disappear. What stays is the story, the feeling, the thing the audience takes home.
+    </p>
+    <div class="value-grid">
+      {values.map((item) => (
+        <div class="value-item">
+          <div class="value-title">{item.title}</div>
+          <div class="value-desc">{item.desc}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section class="section section-scrollable slide-up">
+    <div class="section-header-fixed">
+      <span class="section-label">Selected Work</span>
+      <h2 class="section-headline">
+        A few projects across mediums and tech cycles.
+      </h2>
+    </div>
+    <div class="project-scroll-container">
+      <div class="project-grid">
+        {projects.map((project) => (
+          <div class="project-card">
+            <h3 class="project-title">{project.title}</h3>
+            <p class="project-desc">{project.desc}</p>
+            <div class="project-tags">
+              {project.tags.map((tag) => (
+                <span class="tag">{tag}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer slide-up">
+    <div class="footer-block">
+      <p class="footer-line">I just want to make movies people want to watch.</p>
+      <div class="footer-contact">
+        ERIC DAY<br />
+        Los Angeles, CA<br />
+        <a href="https://ericday.me">ericday.me</a><br />
+        <a href="https://instagram.com/draxdaren">@draxdaren</a>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .theme-toggle {
+    position: fixed;
+    top: 24px;
+    right: 24px;
+    background: var(--fg);
+    color: var(--bg);
+    border: none;
+    padding: 8px 14px;
+    font-family: var(--font);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .theme-toggle:hover {
+    opacity: 0.8;
+  }
+
+
+  .hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .hero-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    margin-bottom: 24px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+    max-width: 875px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  .hero-creds {
+    display: flex;
+    gap: 24px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+  }
+
+  .cred {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+  }
+
+  .section {
+    padding: 80px;
+    border-top: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .section:nth-of-type(2) { z-index: 2; }
+  .section:nth-of-type(3) { z-index: 3; }
+  .section:nth-of-type(4) { z-index: 4; }
+  .section:nth-of-type(5) { z-index: 5; }
+
+
+  .section-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    color: var(--muted);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-headline {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: normal;
+    line-height: 1.5;
+    margin: 0 0 32px 0;
+    max-width: 700px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-body {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    max-width: 600px;
+    color: var(--fg);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-body.muted {
+    color: var(--muted);
+  }
+
+  /* Gallery Strip */
+  .gallery-strip {
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    right: -20%;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    overflow: hidden;
+    scrollbar-width: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 0;
+  }
+
+  .gallery-strip::before,
+  .gallery-strip::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .gallery-strip::before {
+    left: 0;
+    background: linear-gradient(to right, var(--bg), transparent);
+  }
+
+  .gallery-strip::after {
+    right: 0;
+    background: linear-gradient(to left, var(--bg), transparent);
+  }
+
+  .gallery-inner {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.1s ease-out;
+  }
+
+  .gallery-thumb {
+    height: 70vh;
+    width: auto;
+    object-fit: cover;
+    border: none;
+    pointer-events: none;
+    user-select: none;
+    flex-shrink: 0;
+  }
+
+  .gallery-hint {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding-left: 24px;
+    flex-shrink: 0;
+  }
+
+  .timeline {
+    margin-top: 40px;
+    max-width: 700px;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+
+  .timeline-item:last-child {
+    border-bottom: none;
+  }
+
+  .timeline-date {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    font-size: 0.7rem;
+  }
+
+  .timeline-title {
+    margin: 0 0 6px 0;
+    font-weight: normal;
+  }
+
+  .timeline-desc {
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .value-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 40px;
+    max-width: 700px;
+  }
+
+  .value-item {
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  .value-title {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .value-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .section-scrollable {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-header-fixed {
+    flex-shrink: 0;
+    background: var(--bg);
+    padding-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-header-fixed::after {
+    content: '';
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--bg), transparent);
+    pointer-events: none;
+  }
+
+  .project-scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 40px;
+  }
+
+  .project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 700px;
+    padding-bottom: 40px;
+  }
+
+  .project-card {
+    border: 1px solid var(--border);
+    padding: 24px;
+  }
+
+  .project-title {
+    font-size: 0.95rem;
+    margin: 0 0 8px 0;
+    font-weight: normal;
+  }
+
+  .project-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0 0 12px 0;
+  }
+
+  .project-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    padding: 4px 8px;
+    border: 1px solid var(--border);
+  }
+
+  .footer {
+    padding: 80px;
+    border-top: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    height: 100vh;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer-block {
+    border: 1px solid var(--fg);
+    padding: 48px;
+    max-width: 700px;
+    width: 100%;
+  }
+
+  .footer-line {
+    font-size: 1rem;
+    margin: 0 0 24px 0;
+    line-height: 1.6;
+  }
+
+  .footer-contact {
+    font-size: 0.8rem;
+    line-height: 2;
+    color: var(--muted);
+  }
+
+  .slide-up {
+    opacity: 0;
+    transition: opacity 0.6s ease;
+  }
+
+  .slide-up.visible {
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .hero, .section, .footer { padding: 48px 24px; height: auto; min-height: 100vh; }
+    .gallery-strip { left: 24px; right: 24px; bottom: 24px; }
+    .gallery-thumb { width: 60px; height: 60px; }
+    .lightbox-nav { padding: 8px 12px; font-size: 1.2rem; }
+    .lightbox-prev { left: 12px; }
+    .lightbox-next { right: 12px; }
+    .timeline-item { grid-template-columns: 1fr; gap: 8px; }
+    .value-grid { grid-template-columns: 1fr; }
+    .hero-creds { gap: 12px; }
+    .theme-toggle { top: 16px; right: 16px; }
+  }
+</style>
