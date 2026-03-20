@@ -22,6 +22,16 @@ const projects = [
     tags: ["Mixed Reality", "Game Design"]
   },
   {
+    title: "Asteria AI Studio",
+    desc: "Built AI animation pipelines for multi-series, multi-year streaming projects.",
+    tags: ["AI Animation", "Pipeline"]
+  },
+  {
+    title: "Drax Daren",
+    desc: "AI-generated Star Wars photography. Humans of New York in space.",
+    tags: ["Stable Diffusion", "World-building"]
+  },
+  {
     title: "Earth by Lil Dicky",
     desc: "Bronze Lion-winning website. 1M+ impressions within a day of launch.",
     tags: ["Web", "Creative Direction"]
@@ -32,14 +42,34 @@ const projects = [
     tags: ["VR", "Documentary"]
   },
   {
-    title: "Asteria AI Studio",
-    desc: "Built AI animation pipelines for multi-series, multi-year streaming projects.",
-    tags: ["AI Animation", "Pipeline"]
+    title: "Art of Rodarte",
+    desc: "Mixed reality fashion experience for the legendary design house.",
+    tags: ["Mixed Reality", "Fashion"]
   },
   {
-    title: "Drax Daren",
-    desc: "AI-generated Star Wars photography. Humans of New York in space.",
-    tags: ["Stable Diffusion", "World-building"]
+    title: "Charli Cohen: Electric/City",
+    desc: "Virtual fashion collection bridging gaming and high fashion.",
+    tags: ["Virtual Fashion", "Gaming"]
+  },
+  {
+    title: "UN Global Action Climate Summit",
+    desc: "Immersive experience for world leaders at the United Nations.",
+    tags: ["VR", "Climate"]
+  },
+  {
+    title: "The Messy Truth in VR",
+    desc: "Emmy Award-winning VR series with Van Jones exploring America's divisions.",
+    tags: ["VR", "Emmy Winner"]
+  },
+  {
+    title: "Spatial Fusion",
+    desc: "Real-time virtual production pipeline for broadcast television.",
+    tags: ["Virtual Production", "Broadcast"]
+  },
+  {
+    title: "Life Rendered",
+    desc: "Documentary exploring the future of synthetic media and digital humans.",
+    tags: ["Documentary", "Synthetic Media"]
   }
 ];
 
@@ -93,7 +123,7 @@ const values = [
   </section>
 
   <!-- ORIGIN -->
-  <section class="section slide-up" id="origin-section">
+  <section class="section slide-up origin-section" id="origin-section">
     <span class="section-label">How I Got Here</span>
     <h2 class="section-headline">
       I got into AI the same way I get into everything — by making something.
@@ -275,12 +305,37 @@ const values = [
     background: var(--bg);
     height: 100vh;
     overflow: hidden;
+    margin-bottom: 30vh;
   }
 
   .section:nth-of-type(2) { z-index: 2; }
   .section:nth-of-type(3) { z-index: 3; }
   .section:nth-of-type(4) { z-index: 4; }
   .section:nth-of-type(5) { z-index: 5; }
+
+  .origin-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 38%;
+    height: 100%;
+    background: linear-gradient(to right, var(--bg) 0%, var(--bg) 80%, rgba(var(--bg-rgb), 0.3) 92%, rgba(var(--bg-rgb), 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .origin-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 100%;
+    background: linear-gradient(to left, var(--bg) 0%, rgba(var(--bg-rgb), 0.2) 60%, rgba(var(--bg-rgb), 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
 
 
   .section-label {
@@ -339,19 +394,20 @@ const values = [
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 150px;
     z-index: 2;
     pointer-events: none;
   }
 
   .gallery-strip::before {
     left: 0;
-    background: linear-gradient(to right, var(--bg), transparent);
+    width: 80px;
+    background: linear-gradient(to right, rgba(var(--bg-rgb), 0.6) 0%, rgba(var(--bg-rgb), 0.2) 50%, rgba(var(--bg-rgb), 0) 100%);
   }
 
   .gallery-strip::after {
     right: 0;
-    background: linear-gradient(to left, var(--bg), transparent);
+    width: 60px;
+    background: linear-gradient(to left, rgba(var(--bg-rgb), 0.4) 0%, rgba(var(--bg-rgb), 0.1) 50%, rgba(var(--bg-rgb), 0) 100%);
   }
 
   .gallery-inner {
@@ -442,6 +498,7 @@ const values = [
   .section-scrollable {
     display: flex;
     flex-direction: column;
+    margin-bottom: 0;
   }
 
   .section-header-fixed {
@@ -520,6 +577,7 @@ const values = [
     z-index: 6;
     display: flex;
     align-items: center;
+    margin-top: 30vh;
   }
 
   .footer-block {
